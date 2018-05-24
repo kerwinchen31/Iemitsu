@@ -2,7 +2,30 @@
 //APCS2 pd1
 //HW53 -- All That Bouncin'
 //2018-05-24
-void setup(){
-  size( 600, 600);
+class Ball{
+float xcor, ycor, xmove, ymove;
+public Ball(){
+xcor = random(600);
+ycor = random(600);
+xmove = random(8);
+ymove = random(8);
+}
 
-}}
+void show(){
+  fill(random(225),random(225), random(225), random(1000));
+  ellipse(xcor,ycor,40,40);
+}
+
+void move(){
+  xcor += xmove;
+  ycor += ymove;
+  if (xcor>width-25 || xcor<25)
+  {
+    xmove=-xmove;
+  }
+  if (ycor>height-25 || ycor<25)
+  {
+    ymove = -ymove;
+  }
+}
+}
